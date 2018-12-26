@@ -1,0 +1,25 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+movies:
+    type: rest
+    resource: AppBundle\Controller\MoviesController
+
+movies_post:
+    path: /movies
+    methods: [POST]
+    defaults:
+        _controller: AppBundle\Controller\MoviesController:postMoviesAction
+        _format: json
+
+humans:
+    type: rest
+    resource: AppBundle\Controller\HumansController
+
+humans_post:
+    path: /humans
+    methods: [POST]
+    defaults:
+        _controller: AppBundle\Controller\HumansController:postHumansAction
+        _format: json
